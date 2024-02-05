@@ -29,43 +29,38 @@ const Login = () => {
             Enter your email below to login to your account
           </p>
         </div>
-        <div className="space-y-4">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                placeholder="m@example.com"
-                required
-                type="email"
-                {...register('email')}
-              />
+        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              placeholder="m@example.com"
+              required
+              type="email"
+              {...register('email')}
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center">
+              <Label htmlFor="password">Password</Label>
+              <Link className="ml-auto inline-block text-sm underline" href="#">
+                Forgot your password?
+              </Link>
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  className="ml-auto inline-block text-sm underline"
-                  href="#"
-                >
-                  Forgot your password?
-                </Link>
-              </div>
-              <Input
-                id="password"
-                required
-                type="password"
-                {...register('password')}
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              Login
-            </Button>
-            <Button className="w-full" variant="outline">
-              Login with Google
-            </Button>
-          </form>
-        </div>
+            <Input
+              id="password"
+              required
+              type="password"
+              {...register('password')}
+            />
+          </div>
+          <Button type="submit" className="w-full">
+            Login
+          </Button>
+          <Button className="w-full" variant="outline">
+            Login with Google
+          </Button>
+        </form>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{' '}
           <Link className="underline" href="#">
