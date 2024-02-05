@@ -12,7 +12,6 @@ export const signInAction = async (data: Inputs) => {
   try {
     await signIn('credentials', data)
   } catch (error) {
-    console.log('error error', error)
     if (error instanceof AuthError) {
       switch (error.type) {
         case 'CredentialsSignin':
